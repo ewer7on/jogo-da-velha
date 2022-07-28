@@ -9,7 +9,7 @@ h1 {
 
 /*botoes*/
 
-#botao-container botao {
+#botao-container button {
     border: none;
     padding: 10px 15px;
 }

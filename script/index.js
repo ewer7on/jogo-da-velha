@@ -1,10 +1,12 @@
 let x = document.querySelector(".x");
 let o = document.querySelector(".o");
 let boxes = document.querySelectorAll(".box");
-let botao = document.querySelectorAll("botao-container button");
+let container = document.querySelector("#container");
+let x1 = document.getElementById('2-players')
+let bot = document.getElementById('c-maquina')
 var mensagem = document.getElementById('mensagemid');
 var mensagemText = document.getElementById('mensagemText');
-let secondPlay;
+let secoundPlay;
 
 // contador de jogadas
 let player1 = 0;
@@ -26,9 +28,9 @@ for(let i = 0; i < boxes.length; i++) {
 
             this.appendChild(cloneEl);
 
-            // computar jogada
+            //computar jogada
             if(player1 == player2) {
-                player1++;
+                player1++;                
             } else {
                 player2++;
             }
@@ -39,6 +41,36 @@ for(let i = 0; i < boxes.length; i++) {
             
     });
 }
+
+// eventos para saber se é 2 player ou IA
+function PlayerOuIa() {
+   
+        x1.style.display = 'none';
+        bot.style.display = 'none';
+
+}
+
+//inicializaçao do game
+function voltar() {
+setTimeout(function() {
+    container.classList.remove("hide");
+}, 500);
+}
+
+//evento click
+if (x1.addEventListener("click", function() {
+   
+    PlayerOuIa()
+    voltar()
+
+})){} else if (bot.addEventListener("click", function() {
+
+    PlayerOuIa()
+    voltar()
+    secoundPlay = this.getAttribute("id")
+
+    })) {}
+
 
 // ver quem vai jogar
 function checkEl(player1, player2) {

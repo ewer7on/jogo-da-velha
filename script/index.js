@@ -297,7 +297,7 @@ function computerPlay() {
     // só preenche se tiver vazio o filho
     if(boxes[i].childNodes[0] == undefined) {
         if(randomNumber <= 1) {
-            boxes[i].appendChild(cloneO);
+            setTimeout(function() { boxes[i].appendChild(cloneO)}, 600);
             counter++;
             break;
         }
